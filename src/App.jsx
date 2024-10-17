@@ -9,7 +9,7 @@ import { ProductPage, ProductDetail, CustomerAdd, CustomerEdit, CustomerDetail, 
 const App = () => {
     return (
         <>
-            <BrowserRouter>
+            <BrowserRouter basename="/dist">
                 <GlobalStyle />
                 <Routes>
                     <Route path="/" element={<Layout />}>
