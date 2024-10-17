@@ -23,7 +23,7 @@ export const ProductCategoryWrap = styled.div`
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('/images/yellowBackImg2.png');
+            background-image: url('./images/yellowBackImg2.png');
             background-repeat: no-repeat;
             background-size: 160px 200px; /* 배경 이미지를 요소에 맞게 늘림 */
             background-position: center;
