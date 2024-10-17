@@ -9,7 +9,7 @@ import { ProductPage, ProductDetail, CustomerAdd, CustomerEdit, CustomerDetail, 
 const App = () => {
     return (
         <>
-            <BrowserRouter basename="/dist">
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <GlobalStyle />
                 <Routes>
                     <Route path="/" element={<Layout />}>
