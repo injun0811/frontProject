@@ -3,7 +3,7 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "homepage": "https://injun0811.github.io/frontProject/",
+    "homepage": "https://injun0811.github.io/frontProject",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
