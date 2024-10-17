@@ -194,7 +194,7 @@ export const ProductDetailWrap = styled.div`
         width: 50%;
         padding: 50px;
         text-align: center;
-        background-image: url('/images/priceBackground1.jfif');
+        background-image: url('./images/priceBackground1.jfif');
         background-repeat: no-repeat;
         background-size: 100% 100%; /* 배경 이미지를 요소에 맞게 늘림 */
         background-position: center;

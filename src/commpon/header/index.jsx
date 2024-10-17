@@ -8,7 +8,7 @@ const Header = () => {
             <div className="inner">
                 <h1>
                     <Link to="/">
-                        <img src="/images/lamborghini_logo.svg" alt="lamborghini_logo" />
+                        <img src="./images/lamborghini_logo.svg" alt="lamborghini_logo" />
                     </Link>
                 </h1>
                 <NavBar />
