@@ -9,7 +9,6 @@ import { ProductPage, ProductDetail, CustomerAdd, CustomerEdit, CustomerDetail, 
 const App = () => {
     return (
         <>
-            {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
             <HashRouter>
                 <GlobalStyle />
                 <Routes>
