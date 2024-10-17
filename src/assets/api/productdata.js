@@ -10,7 +10,7 @@ export default {
             hex: ['#323232'],
             description:
                 'Automobili Lamborghini Squadra Corse adults&#96; Cap with 3D rubberized logo and metal back closure. Further embellished by the colors and the official sponsors of the Racing Team.',
-            image: '/images/products/caps/SKU16432PLB/16432PLB000000_01.webp',
+            image: './images/products/caps/SKU16432PLB/16432PLB000000_01.webp',
             imgCnt: 4,
         },
         {
@@ -22,7 +22,7 @@ export default {
             color: ['black'],
             hex: ['#323232'],
             description: 'Automobili Lamborghini Squadra Corse adults&#96; Cap with 3D rubberized logo and metal back closure.',
-            image: '/images/products/caps/SKU16430PLB/16430PLB000000_01.webp',
+            image: './images/products/caps/SKU16430PLB/16430PLB000000_01.webp',
             imgCnt: 4,
         },
         {
@@ -34,7 +34,7 @@ export default {
             color: ['lightblue', 'lightgray'],
             hex: ['#29588e', '#ded7c0'],
             description: 'Cotton cap customised with an embroidered silver-tone shield logo.',
-            image: '/images/products/caps/SKU16389CCU/lightblue/16389CCU000000_01.webp',
+            image: './images/products/caps/SKU16389CCU/lightblue/16389CCU000000_01.webp',
             imgCnt: 4,
         },
         {
@@ -46,7 +46,7 @@ export default {
             color: ['black', 'blue'],
             hex: ['#323232', '#050a61'],
             description: 'Iconic unisex Automobili Lamborghini cap customised with Gold Shield Logo print with embossed print.',
-            image: '/images/products/caps/SKU16210PLB/black/16210PLB000000_01.webp',
+            image: './images/products/caps/SKU16210PLB/black/16210PLB000000_01.webp',
             imgCnt: 4,
         },
         {
@@ -59,7 +59,7 @@ export default {
             hex: ['#dfd9c1'],
             description:
                 'Made of 73% Acrylic, 27% wool with sufficient thickness, naivlizer beanie hat has more detailed design and well-made craftsmanship, always keeps you warm and stylish.',
-            image: '/images/products/caps/SKU16388WWW/16388WWW000000_01.webp',
+            image: './images/products/caps/SKU16388WWW/16388WWW000000_01.webp',
             imgCnt: 2,
         },
     ],
@@ -73,7 +73,7 @@ export default {
             color: ['black'],
             hex: ['#323232'],
             description: 'KEY HOLDER IS MADE OFF BRASS',
-            image: '/images/products/keyring/SKU11264BRB/11264BRB000000_01.webp',
+            image: './images/products/keyring/SKU11264BRB/11264BRB000000_01.webp',
             imgCnt: 1,
         },
     ],
@@ -88,7 +88,7 @@ export default {
             hex: ['#faf2fa'],
             description:
                 'Wireless MW75 headphones with active noise cancelling (ANC) and a 40-mm beryllium driver. The batteries last up to 32 hours or up to 28 hours in active noise-cancelling mode. Dimensions: 161mm x 198mm x 83.5mm',
-            image: '/images/products/dynamic/SKU16309IIE/16309IIE094WIR_01.webp',
+            image: './images/products/dynamic/SKU16309IIE/16309IIE094WIR_01.webp',
             imgCnt: 3,
         },
         {
@@ -101,7 +101,7 @@ export default {
             hex: ['#a8d24f'],
             description:
                 'Wireless MG20 Gaming Headphones fitted with 50-mm beryllium drivers and featuring 7.1 surround sound. The detachable boom microphone with onboard mikes guarantees outstanding conversation quality as well as a sophisticated design. Dimensions: 174mm x 197mm x 84.5mm',
-            image: '/images/products/dynamic/SKU16310IIB/16310IIB080WIR_01.webp',
+            image: './images/products/dynamic/SKU16310IIB/16310IIB080WIR_01.webp',
             imgCnt: 3,
         },
     ],
@@ -116,7 +116,7 @@ export default {
             hex: ['#c5da49', '#fd8604'],
             description:
                 'Do you love Lamborghini? Do you dream of owning your own Lamborghini Huracán Tecnica? Well, now you can with this LEGO® Technic™ Lamborghini Huracán Tecnica model kit.',
-            image: '/images/products/lego/SKU16412PPH/green/16412PPH000000_01.webp',
+            image: './images/products/lego/SKU16412PPH/green/16412PPH000000_01.webp',
             imgCnt: 5,
         },
         {
@@ -129,7 +129,7 @@ export default {
             hex: ['#dfd8c0'],
             description:
                 'Get ready to experience the legendary Lamborghini Countach, the iconic super sports car revered by armies of fans from around the world for its stunning design and top-notch performance.',
-            image: '/images/products/lego/SKU16151PPW/16151PPW000000_01.webp',
+            image: './images/products/lego/SKU16151PPW/16151PPW000000_01.webp',
             imgCnt: 5,
         },
     ],
