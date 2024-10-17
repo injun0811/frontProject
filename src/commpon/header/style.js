@@ -72,9 +72,9 @@ export const NavWrap = styled.nav`
                 right: 0;
                 bottom: 0;
                 // git 주소
-                /* background-image: url('/frontProject/dist/images/yellowBackImg1.png'); */
+                background-image: url('/frontProject/dist/images/yellowBackImg1.png');
                 // 로컬 주소
-                background-image: url('images/yellowBackImg1.png');
+                /* background-image: url('images/yellowBackImg1.png'); */
                 // 절대 경로
                 /* background-image: url('/../../../images/yellowBackImg1.png'); */
                 background-repeat: no-repeat;
