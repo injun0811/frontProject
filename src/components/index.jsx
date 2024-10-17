@@ -4,3 +4,8 @@ export { default as NoticeDetail } from './notice/NoticeDetail';
 export { default as CustomerDetail } from './customer/CustomerDetail';
 export { default as CustomerAdd } from './customer/CustomerAdd';
 export { default as CustomerEdit } from './customer/CustomerEdit';
+export { default as Menu } from '../pages/mypage/Menu';
+export { default as Edit } from './mypage/Edit';
+export { default as Card } from './mypage/Card';
+export { default as Address } from './mypage/Address';
+export { default as AccountDel } from './mypage/AccountDel';

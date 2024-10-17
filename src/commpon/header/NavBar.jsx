@@ -23,6 +23,9 @@ const NavBar = () => {
                     <li className="yellowBackImg1">
                         <Link to={'/customer'}>Customer</Link>
                     </li>
+                    <li className="yellowBackImg1">
+                        <Link to={'/mypage'}>Mypage</Link>
+                    </li>
 
                     <li className="yellowBackImg1">
                         <Link to="/cart">
@@ -34,15 +37,15 @@ const NavBar = () => {
 
             <TopMenu className="top-menu">
                 <li>
-                    <Link to={'/join'}>회원가입</Link>
+                    <Link to={'/join'}>Join</Link>
                 </li>
 
                 <li>
-                    <Link to={'/logout'}>로그아웃</Link>
+                    <Link to={'/logout'}>Logout</Link>
                 </li>
 
                 <li>
-                    <Link to={'/login'}>로그인</Link>
+                    <Link to={'/login'}>Login</Link>
                 </li>
             </TopMenu>
         </>

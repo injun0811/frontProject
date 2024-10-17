@@ -11,9 +11,14 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        // 카트 적재
+        // 카트 적재 (기존 carts에 있으면 count만 증가 처리)
         addCart: (state, action) => {
-            state.carts = [...state.carts, { ...action.payload, isChoice: false, count: 1, totalPrice: 0 }];
+            const findId = state.carts.find((item) => item.id === Number(action.payload.id));
+            if (findId !== '' && findId !== undefined) {
+                state.carts = state.carts.map((item) => (item.id === action.payload.id ? { ...item, count: item.count + 1 } : item));
+            } else {
+                state.carts = [...state.carts, { ...action.payload, isChoice: false, count: 1, totalPrice: 0 }];
+            }
         },
         // 카트 삭제
         deleteCart: (state, action) => {
