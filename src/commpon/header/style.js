@@ -71,8 +71,8 @@ export const NavWrap = styled.nav`
                 left: 0;
                 right: 0;
                 bottom: 0;
-                /* background-image: url('/frontProject/dist/images/yellowBackImg1.png'); */
-                background-image: url('/images/yellowBackImg1.png');
+                background-image: url('/frontProject/dist/images/yellowBackImg1.png');
+                /* background-image: url('/images/yellowBackImg1.png'); */
                 background-repeat: no-repeat;
                 background-size: 100% 200%; /* 배경 이미지를 요소에 맞게 늘림 */
                 background-position: center;
