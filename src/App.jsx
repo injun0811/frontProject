@@ -10,7 +10,7 @@ const App = () => {
     return (
         <>
             {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
-            <BrowserRouter>
+            <HashRouter>
                 <GlobalStyle />
                 <Routes>
                     <Route path="/" element={<Layout />}>
@@ -52,7 +52,7 @@ const App = () => {
 
                     <Route path="*" element={<NotFiles />} />
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </>
     );
 };
