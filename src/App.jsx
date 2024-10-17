@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, HashRouter } from 'react-router-dom';
 import GlobalStyle from './styled/GlobalStyle';
 import Layout from './commpon/Layout';
 import NotFiles from './pages/notfile';
@@ -10,7 +10,7 @@ const App = () => {
     return (
         <>
             {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
-            <BrowserRouter basename="/frontProject">
+            <BrowserRouter>
                 <GlobalStyle />
                 <Routes>
                     <Route path="/" element={<Layout />}>
