@@ -12,6 +12,7 @@ export const productSlice = createSlice({
     reducers: {
         updateDetail: (state, action) => {
             state.detail = action.payload;
+            localStorage.setItem('detail', JSON.stringify(state.detail));
         },
     },
 });

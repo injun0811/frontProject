@@ -16,6 +16,7 @@ export { default as Product } from './product/Product';
 export { default as Cart } from './cart';
 export { default as Notice } from './notice/Notice';
 export { default as Customer } from './customer/Customer';
+export { default as Mypage } from './mypage/Mypage';
 
 // Footer
 export { default as Financials } from './financials/Financials';

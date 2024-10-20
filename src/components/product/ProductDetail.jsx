@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import ProductShowImg from './ProductShowImg';
 import { ProductDetailWrap } from './ProductStyle';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import ProductCategory from './ProductCategory';
 import { addCart, addWishList } from '../../store/modules/cartSlice';
 
 const ProductDetail = () => {
-    const { detail } = useSelector((state) => state.product);
+    const detail = JSON.parse(localStorage.getItem('detail'));
+
     const { id, title, model, category, price, color, hex, description, image, imgCnt } = detail;
     const imgCntArr = Array.from({ length: imgCnt }, (_, i) => i);
     const dispatch = useDispatch();
