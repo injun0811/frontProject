@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Editmenu = styled.div`
-
     h3 {
         text-align: center;
         font-size: 38px;
@@ -26,7 +25,6 @@ export const Editmenu = styled.div`
             label {
                 padding: 0 10px 0 10px;
             }
-
         }
 
         article {
@@ -37,8 +35,8 @@ export const Editmenu = styled.div`
             margin: 9px;
             width: 150px;
             height: 40px;
-            color: #FCC419;
-            background-color:#212121;
+            color: #fcc419;
+            background-color: #212121;
         }
 
         .btnLayout {
@@ -53,7 +51,7 @@ export const Editmenu = styled.div`
             position: relative;
             padding: 10px 20px;
             background-color: #212121;
-            color: #FCC419;
+            color: #fcc419;
             border: none;
             cursor: pointer;
             overflow: hidden;
@@ -68,7 +66,7 @@ export const Editmenu = styled.div`
             left: 0;
             width: 150%;
             height: 100%;
-            background-color: #FCC419;
+            background-color: #fcc419;
             transform: translateX(-110%) skew(-15deg);
             transition: transform 0.8s ease;
             z-index: -1;
@@ -87,7 +85,7 @@ export const Editmenu = styled.div`
             color: red;
         }
     }
-`
+`;
 
 export const Cardmenu = styled.div`
     h3 {
@@ -124,8 +122,8 @@ export const Cardmenu = styled.div`
             margin: 9px;
             width: 150px;
             height: 40px;
-            color: #FCC419;
-            background-color:#212121;
+            color: #fcc419;
+            background-color: #212121;
         }
 
         .btnLayout {
@@ -140,7 +138,7 @@ export const Cardmenu = styled.div`
             position: relative;
             padding: 10px 20px;
             background-color: #212121;
-            color: #FCC419;
+            color: #fcc419;
             border: none;
             cursor: pointer;
             overflow: hidden;
@@ -155,7 +153,7 @@ export const Cardmenu = styled.div`
             left: 0;
             width: 150%;
             height: 100%;
-            background-color: #FCC419;
+            background-color: #fcc419;
             transform: translateX(-110%) skew(-15deg);
             transition: transform 0.8s ease;
             z-index: -1;
@@ -174,10 +172,9 @@ export const Cardmenu = styled.div`
             height: 206px;
         }
     }
-`
+`;
 
 export const Addressmenu = styled.div`
-
     h3 {
         text-align: center;
         font-size: 38px;
@@ -200,8 +197,8 @@ export const Addressmenu = styled.div`
             margin: 9px;
             width: 150px;
             height: 40px;
-            color: #FCC419;
-            background-color:#212121;
+            color: #fcc419;
+            background-color: #212121;
         }
 
         .btnLayout {
@@ -216,7 +213,7 @@ export const Addressmenu = styled.div`
             position: relative;
             padding: 10px 20px;
             background-color: #212121;
-            color: #FCC419;
+            color: #fcc419;
             border: none;
             cursor: pointer;
             overflow: hidden;
@@ -231,7 +228,7 @@ export const Addressmenu = styled.div`
             left: 0;
             width: 150%;
             height: 100%;
-            background-color: #FCC419;
+            background-color: #fcc419;
             transform: translateX(-110%) skew(-15deg);
             transition: transform 0.8s ease;
             z-index: -1;
@@ -250,4 +247,4 @@ export const Addressmenu = styled.div`
             height: 609px;
         }
     }
-`
+`;

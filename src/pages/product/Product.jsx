@@ -1,6 +1,4 @@
-import ProductSearch from '../../components/product/ProductSearch';
 import { ProductWrap } from './style';
-import ProductList from '../../components/product/ProductList';
 import ProductCategory from '../../components/product/ProductCategory';
 
 const Product = () => {
@@ -9,9 +7,6 @@ const Product = () => {
             <ProductCategory />
             <div className="inner">
                 <h2> Product 페이지 입니다. </h2>
-
-                {/* <ProductSearch />
-                <ProductList /> */}
             </div>
         </ProductWrap>
     );

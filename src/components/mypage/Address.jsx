@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import Menu from '../../pages/mypage/Menu';
 import { Addressmenu } from './style';
 import { useDispatch } from 'react-redux';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { defaultDataUpdate } from '../../store/modules/authSlice';
 
 const Address = () => {

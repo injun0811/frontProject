@@ -33,38 +33,43 @@ export const CartListWrap = styled.div`
             }
             button {
                 width: 100px;
-                border: 1px solid #000;
+                border: 1px solid #212121;
                 height: 40px;
                 transition: 0.3s;
                 margin-top: 0;
                 &:hover {
-                    background: #fff;
-                    color: #000;
+                    background: #fcc419;
+                    color: #212121;
                 }
             }
             .btnType {
-                margin: 10px;
-                padding: 10px;
-                border: 1px solid #000;
-                background-color: black;
-                color: white;
+                width: 100px;
+                height: 40px;
+                align-content: center;
+                border: 1px solid #212121;
+                background: #212121;
+                color: #fcc419;
                 cursor: pointer;
                 transition: 0.5s;
 
                 &:hover {
-                    background-color: white;
-                    color: black;
+                    background: #fcc419;
+                    color: #212121;
                 }
             }
 
-            .depth1 {width:50%;}
+            .depth1 {
+                width: 50%;
+            }
             .depth2 {
                 width: 30%;
                 h3 {
                     width: 80px;
                 }
             }
-            .depth3 {width:20%;}
+            .depth3 {
+                width: 20%;
+            }
         }
     }
 
@@ -75,13 +80,18 @@ export const CartListWrap = styled.div`
         strong {
             margin-right: 20px;
         }
+
+        div {
+            margin: 0 20px 0 0;
+            padding: 15px;
+        }
     }
     button {
         margin-top: 50px;
         width: 250px;
         height: 50px;
-        background: #000;
-        color: #fff;
+        background: #212121;
+        color: #fcc419;
         margin-right: 5px;
     }
 `;

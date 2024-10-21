@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Link, HashRouter } from 'react-router-dom';
 import GlobalStyle from './styled/GlobalStyle';
-import Layout from './commpon/Layout';
+import Layout from './common/Layout';
 import NotFiles from './pages/notfile';
 import Main from './pages/main';
 import {

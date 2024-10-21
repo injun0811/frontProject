@@ -78,8 +78,8 @@ export const NoticeDetailWrap = styled.div`
     button {
         width: 200px;
         height: 50px;
-        background: #000;
-        color: #fff;
+        background: #212121;
+        color: #fcc419;
         cursor: pointer;
         border: none;
     }

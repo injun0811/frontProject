@@ -4,11 +4,11 @@ export const ProductCategoryWrap = styled.div`
     background-color: #212121;
 
     ul {
-        display:flex;
+        display: flex;
         justify-content: center;
 
         li {
-            padding:30px;
+            padding: 30px;
         }
 
         .yellowBackImg2 {
@@ -48,7 +48,7 @@ export const ProductCategoryWrap = styled.div`
         }
 
         .yellowBackImg2:hover a {
-            color: #FCC419; /* 호버 시 글자색 변경 */
+            color: #fcc419; /* 호버 시 글자색 변경 */
         }
     }
 `;
@@ -71,6 +71,8 @@ export const ProductSearchWrap = styled.div`
                 width: 100px;
                 height: 45px;
                 vertical-align: top;
+                color: #fcc419;
+                background-color: #212121;
             }
             select {
                 width: 200px;
@@ -82,6 +84,40 @@ export const ProductSearchWrap = styled.div`
             span {
                 margin-left: 15px;
                 cursor: pointer;
+            }
+
+            .mainBtn {
+                padding: 20px;
+                position: relative;
+                padding: 10px 20px;
+                background-color: #212121;
+                color: #fcc419;
+                border: none;
+                cursor: pointer;
+                overflow: hidden;
+                transition: color 0.3s ease;
+                z-index: 1;
+            }
+
+            .mainBtn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 150%;
+                height: 100%;
+                background-color: #fcc419;
+                transform: translateX(-110%) skew(-15deg);
+                transition: transform 0.8s ease;
+                z-index: -1;
+            }
+
+            .mainBtn:hover {
+                color: #212121; /* 호버 시 텍스트 색상 변경 */
+            }
+
+            .mainBtn:hover::before {
+                transform: translateX(-10%) skew(-15deg); /* 호버 시 오른쪽으로 이동 */
             }
         }
     }
@@ -140,7 +176,7 @@ export const ProductListWrap = styled.article`
             }
             &:hover {
                 background-color: #212121;
-                color:#FCC419
+                color: #fcc419;
             }
         }
 
@@ -151,7 +187,7 @@ export const ProductListWrap = styled.article`
 `;
 
 export const ProductDetailWrap = styled.div`
-    display:flex;
+    display: flex;
 
     .left {
         position: relative;
@@ -177,7 +213,7 @@ export const ProductDetailWrap = styled.div`
                         border: 1px solid transparent;
 
                         &.on {
-                            border: 1px solid black;
+                            border: 1px solid #212121;
                         }
                     }
                 }
@@ -191,6 +227,7 @@ export const ProductDetailWrap = styled.div`
     }
 
     .right {
+        color: #fcc419;
         width: 50%;
         padding: 50px;
         text-align: center;
@@ -199,7 +236,8 @@ export const ProductDetailWrap = styled.div`
         background-size: 100% 100%; /* 배경 이미지를 요소에 맞게 늘림 */
         background-position: center;
 
-        h4, h6 {
+        h4,
+        h6 {
             padding: 20px;
         }
 
@@ -209,7 +247,7 @@ export const ProductDetailWrap = styled.div`
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                
+
                 li {
                     padding: 10px;
                     height: 30px;
@@ -227,14 +265,14 @@ export const ProductDetailWrap = styled.div`
                         height: 100%;
 
                         &.on {
-                            box-shadow: 0px 0px 2px 2px #FCC419;
+                            box-shadow: 0px 0px 2px 2px #fcc419;
                         }
                     }
                 }
             }
         }
         p {
-            display:grid;
+            display: grid;
 
             button {
                 padding: 20px;
@@ -257,7 +295,7 @@ export const ProductDetailWrap = styled.div`
                 left: 0;
                 width: 150%;
                 height: 100%;
-                background-color: #FCC419;
+                background-color: #fcc419;
                 transform: translateX(-110%) skew(-15deg);
                 transition: transform 0.8s ease;
                 z-index: -1;
@@ -273,9 +311,8 @@ export const ProductDetailWrap = styled.div`
 
             .mainBtn {
                 background-color: #212121;
-                color:#FCC419
+                color: #fcc419;
             }
         }
-        
     }
 `;

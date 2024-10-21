@@ -54,7 +54,9 @@ const Login = () => {
                         <span>테스트 비밀번호 : 123</span>
                     </p>
                     <p className="btn">
-                        <button type="submit">로그인</button>
+                        <button type="submit" className="mainBtn">
+                            로그인
+                        </button>
                     </p>
                 </form>
             </div>

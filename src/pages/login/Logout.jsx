@@ -26,7 +26,9 @@ const Logout = () => {
                         </h3>
 
                         <p>
-                            <button onClick={logout}>로그아웃</button>
+                            <button onClick={logout} className="mainBtn">
+                                로그아웃
+                            </button>
                         </p>
                     </>
                 ) : (

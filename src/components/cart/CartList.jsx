@@ -21,14 +21,14 @@ const CartList = () => {
                 ))}
             </div>
             <div className="cart-bottom">
-                <p>
+                <div>
                     <strong>총개수</strong>
                     <span> total : {carts.length} 개</span>
-                </p>
-                <p>
+                </div>
+                <div>
                     <strong>총금액</strong>
-                    <span> total : {cartsTotal} 원</span>
-                </p>
+                    <span> total : $ {cartsTotal}</span>
+                </div>
             </div>
             <p>
                 <button onClick={() => navigate('/product')}>쇼핑하러가기</button>

@@ -7,9 +7,10 @@ export const PaginationWrap = styled.div`
         button {
             width: 30px;
             height: 30px;
-            border: 1px solid #666;
+            border: 1px solid #212121;
             margin-right: 5px;
-            background: #fff;
+            background: #212121;
+            color: #fcc419;
             &:first-child {
                 border: none;
             }
@@ -17,9 +18,9 @@ export const PaginationWrap = styled.div`
                 border: none;
             }
             &.on {
-                border-color: tomato;
-                background: tomato;
-                color: #fff;
+                border-color: #fcc419;
+                background: #fcc419;
+                color: #212121;
             }
         }
     }
