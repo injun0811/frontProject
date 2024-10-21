@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HeaderWrap = styled.header`
     border-bottom: 1px solid #000;
     background-color: #212121;
-    color: #FCC419;
+    color: #fcc419;
     .inner {
         height: 120px;
     }
@@ -35,7 +35,7 @@ export const NavWrap = styled.nav`
         ul {
             display: flex;
             li {
-                margin-left: 100px;
+                margin-left: 90px;
                 position: relative;
                 a {
                     transition: 0.3s;
@@ -53,7 +53,7 @@ export const NavWrap = styled.nav`
                     width: 20px;
                     height: 20px;
                     background-color: #000;
-                    color: #FCC419;
+                    color: #fcc419;
                     text-align: center;
                     line-height: 17px;
                 }
@@ -95,7 +95,7 @@ export const NavWrap = styled.nav`
             }
 
             .yellowBackImg1:hover a {
-                color: #FCC419; /* 호버 시 글자색 변경 */
+                color: #fcc419; /* 호버 시 글자색 변경 */
             }
         }
     }
@@ -110,7 +110,7 @@ export const TopMenu = styled.ul`
         li {
             margin-left: 25px;
             a {
-                color: #FCC419;
+                color: #fcc419;
                 font-size: 15px;
             }
         }

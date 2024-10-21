@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const NoticeListWrap = styled.div`
-    height: 500px;
+    height: 645px;
 
     .noticeTable {
         width: 100%;

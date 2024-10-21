@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 const NavBar = () => {
     const { carts } = useSelector((state) => state.cart);
+    const { login } = useSelector((state) => state.auth);
     return (
         <>
             <NavWrap className="nav">
@@ -36,6 +37,7 @@ const NavBar = () => {
             </NavWrap>
 
             <TopMenu className="top-menu">
+<<<<<<< HEAD
                 <li>
                     <Link to={'/join'}>Join</Link>
                 </li>
@@ -47,6 +49,11 @@ const NavBar = () => {
                 <li>
                     <Link to={'/login'}>Login</Link>
                 </li>
+=======
+                <li>{login ? '' : <Link to={'/join'}>Join</Link>}</li>
+
+                <li>{login ? <Link to={'/logout'}>Logout</Link> : <Link to={'/login'}>Login</Link>}</li>
+>>>>>>> ff02152f38c2c367294b6f7abe294723058c3dac
             </TopMenu>
         </>
     );

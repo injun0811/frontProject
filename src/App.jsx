@@ -3,7 +3,27 @@ import GlobalStyle from './styled/GlobalStyle';
 import Layout from './commpon/Layout';
 import NotFiles from './pages/notfile';
 import Main from './pages/main';
+<<<<<<< HEAD
 import { About, Careers, Cart, CME, ContactUs, Customer, Financials, Notice, Product, QFC, Models, Mypage } from './pages';
+=======
+import {
+    About,
+    Careers,
+    Cart,
+    CME,
+    ContactUs,
+    Customer,
+    Financials,
+    Notice,
+    Product,
+    QFC,
+    Models,
+    Mypage,
+    Join,
+    Logout,
+    Login,
+} from './pages';
+>>>>>>> ff02152f38c2c367294b6f7abe294723058c3dac
 import {
     ProductPage,
     ProductDetail,
@@ -66,6 +86,10 @@ const App = () => {
                         {/* Financials - Capital Market events (https://www.lamborghini.com/en-en/financials/capital-market-events) */}
                         {/* Contact us (https://www.lamborghini.com/en-en/contact-us) */}
                         {/* Careers (https://www.lamborghini.com/en-en/careers) */}
+
+                        <Route path="/join" element={<Join />} />
+                        <Route path="/logout" element={<Logout />} />
+                        <Route path="/login" element={<Login />} />
                     </Route>
 
                     <Route path="*" element={<NotFiles />} />
