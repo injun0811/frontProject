@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MypageWrap, SideMenu, SubMenu, MenuItem } from './style';
+import { MypageWrap, SideMenu, SubMenu, MenuItem, SideMenuRight } from './style';
 import { Link } from 'react-router-dom';
 
 const Menu = () => {
@@ -54,6 +54,7 @@ const Menu = () => {
                             </div>
                         </MenuItem>
                     </div>
+                    <SideMenuRight className={isMenuOpen ? 'on' : ''}></SideMenuRight>
                 </SideMenu>
             </div>
         </MypageWrap>

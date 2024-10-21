@@ -5,7 +5,8 @@ const Mypage = () => {
     return (
         <MypageWrap>
             <div className="inner">
-                <h2> My page </h2>
+                {/* <h2> My page </h2> */}
+                <img src="./images/about/about02.jpg" alt="mypageImg" />
             </div>
             <Menu />
         </MypageWrap>

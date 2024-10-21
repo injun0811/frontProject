@@ -3,14 +3,19 @@ import styled from 'styled-components';
 export const MypageWrap = styled.div`
     position: relative;
     overflow-x: hidden;
+
+    img {
+        height: 680px;
+        width: 1400px;
+    }
 `;
 
 export const SideMenu = styled.div`
     position: fixed;
     top: 12.6%;
     left: -250px;
-    width: 250px;
-    height: 600px;
+    width: 260px;
+    height: 681px;
     background-color: #212121;
     transition: left 0.3s ease-in-out;
     padding: 20px;
@@ -56,3 +61,19 @@ export const MenuItem = styled.div`
         margin: 0;
     }
 `;
+
+export const SideMenuRight = styled.div`
+    position: fixed;
+    top: 12.6%;
+    right: -250px;
+    width: 260px;
+    height: 681px;
+    background-color: #212121;
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+
+    &.on {
+        right: 0;
+    }
+`

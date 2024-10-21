@@ -133,7 +133,6 @@ export const JoinWrap = styled.div`
 
             .mainBtn {
                 padding: 20px;
-                margin: 20px;
                 position: relative;
                 padding: 10px 20px;
                 background-color: #212121;

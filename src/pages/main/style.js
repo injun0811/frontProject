@@ -11,13 +11,8 @@ export const MainWrap = styled.div`
         font-weight: 700;
     }
 `;
-
-<<<<<<< HEAD
 export const AboutWrap = styled.div` 
 
-=======
-export const AboutWrap = styled.div`
->>>>>>> ff02152f38c2c367294b6f7abe294723058c3dac
     .videoDiv {
         position: relative;
         width: 100%;
@@ -45,21 +40,12 @@ export const AboutWrap = styled.div`
         justify-content: flex-start;
         align-items: flex-start;
         padding: 30px;
-<<<<<<< HEAD
         color: #FCC419;
     
         .firstHeading { 
             user-select: none;
             font-size: 50px;
             margin-top: 600px;
-=======
-        color: #fcc419;
-
-        .firstHeading {
-            user-select: none;
-            font-size: 50px;
-            margin-top: 33%;
->>>>>>> ff02152f38c2c367294b6f7abe294723058c3dac
         }
 
         .secondHeading {
@@ -68,8 +54,4 @@ export const AboutWrap = styled.div`
             margin-right: 50px;
         }
     }
-<<<<<<< HEAD
 `
-=======
-`;
->>>>>>> ff02152f38c2c367294b6f7abe294723058c3dac

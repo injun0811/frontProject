@@ -90,7 +90,6 @@ const Join = () => {
             delete formData.password1;
             delete formData.password2;
 
-            console.log(formData);
             dispatch(join(formData));
             alert('회원가입이 완료되었습니다, 로그인 페이지로 이동합니다.');
             navigate('/login');

@@ -17,18 +17,6 @@ const About = () => {
                 loop={true}
             >
                 <SwiperSlide>
-<<<<<<< HEAD
-                    <img src="./images/about/display01.webp" alt="display01" style={{ width: '1900px', height: '800px' }} />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="./images/about/display02.webp" alt="display02" style={{ width: '1900px', height: '800px' }} />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="./images/about/display03.webp" alt="display03" style={{ width: '1900px', height: '800px' }} />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="./images/about/display04.jpg" alt="display04" style={{ width: '1900px', height: '800px' }} />
-=======
                     <img src="./images/about/display01.jpg" alt="display01" style={{ width: '100%', height: '100%' }} />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -39,7 +27,6 @@ const About = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src="./images/about/display05.jpg" alt="display04" style={{ width: '100%', height: '100%' }} />
->>>>>>> ff02152f38c2c367294b6f7abe294723058c3dac
                 </SwiperSlide>
             </Swiper>
         </VisualWrap>
