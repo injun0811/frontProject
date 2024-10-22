@@ -39,8 +39,11 @@ export const authSlice = createSlice({
             state.loginUser = { ...action.payload };
             localStorage.setItem('loginData', JSON.stringify(action.payload));
         },
+        deleteAccount: (state, action) => {
+            state.accounts = state.accounts.filter((account) => account.id !== action.payload.id);
+        },
     },
 });
 
-export const { loginChk, logoutChk, join, defaultDataUpdate } = authSlice.actions;
+export const { loginChk, logoutChk, join, defaultDataUpdate, deleteAccount } = authSlice.actions;
 export default authSlice.reducer;

@@ -26,6 +26,11 @@ const Edit = () => {
         setTel(newTel);
     };
 
+    const accountTypeChg = (e) => {
+        e.preventDefault();
+        alert('아직 준비중입니다.');
+    };
+
     const onChg = (e) => {
         const { name, value, type } = e.target;
         if (type === 'radio') setUserData({ ...userData, gender: value });
@@ -121,7 +126,11 @@ const Edit = () => {
                         <article>
                             * 현재 계정은 <span className="bold">{userData.admin ? '관리자' : '일반'}</span> 입니다.
                         </article>
-                        {userData.admin ? <button>일반 권한 요청</button> : <button>관리자 권한 요청</button>}
+                        {userData.admin ? (
+                            <button onClick={() => accountTypeChg('')}>일반 권한 요청</button>
+                        ) : (
+                            <button onClick={() => accountTypeChg()}>관리자 권한 요청</button>
+                        )}
                     </div>
                     <article>
                         * 주소는 <span className="bold">배송지 관리</span>에서 수정할 수 있습니다.

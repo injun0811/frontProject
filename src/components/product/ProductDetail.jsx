@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
 import ProductShowImg from './ProductShowImg';
 import { ProductDetailWrap } from './ProductStyle';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProductCategory from './ProductCategory';
 import { addCart, addWishList } from '../../store/modules/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
 const ProductDetail = () => {
+    const { login } = useSelector((state) => state.auth);
     const detail = JSON.parse(localStorage.getItem('detail'));
 
     const { id, title, model, category, price, color, hex, description, image, imgCnt } = detail;
     const imgCntArr = Array.from({ length: imgCnt }, (_, i) => i);
+
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const [imageCnt, setImageCnt] = useState(0); // 메인 이미지 배열 cnt
@@ -32,6 +36,24 @@ const ProductDetail = () => {
         setSelectHex(hex[idx]);
         setSelectCol(color[idx]);
         setImageCnt(0); // 색상 변경 시 첫 번째 이미지로 리셋
+    };
+
+    const goCart = () => {
+        if (login) dispatch(addCart(detail));
+        else {
+            if (confirm('로그인이 필요합니다, 로그인 페이지로 이동하시겠습니까?')) {
+                navigate('/login');
+            }
+        }
+    };
+
+    const goWish = () => {
+        if (login) dispatch(addWishList(detail));
+        else {
+            if (confirm('로그인이 필요합니다, 로그인 페이지로 이동하시겠습니까?')) {
+                navigate('/login');
+            }
+        }
     };
 
     return (
@@ -69,10 +91,10 @@ const ProductDetail = () => {
                     </h5>
                     <h6>{description}</h6>
                     <p>
-                        <button className="mainBtn" onClick={() => dispatch(addCart(detail))}>
+                        <button className="mainBtn" onClick={goCart}>
                             ADD TO CART
                         </button>
-                        <button onClick={() => dispatch(addWishList(detail))}> ADD TO WISHLIST </button>
+                        <button onClick={goWish}> ADD TO WISHLIST </button>
                     </p>
                 </div>
             </ProductDetailWrap>
