@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import Menu from '../../pages/mypage/Menu';
 import { Addressmenu } from './style';
 import { useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { defaultDataUpdate } from '../../store/modules/authSlice';
 
 const Address = () => {
@@ -10,42 +10,98 @@ const Address = () => {
     const dispatch = useDispatch();
     const loginData = JSON.parse(localStorage.getItem('loginData'));
     const [userData, setUserData] = useState({ ...loginData });
-    const [addr1, setAddr1] = useState(userData.addr1);
-    const [addr2, setAddr2] = useState(userData.addr2);
 
-    // 지도 API
-    const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-    const options = {
-        //지도를 생성할 때 필요한 기본 옵션
-        center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-        level: 3, //지도의 레벨(확대, 축소 정도)
-    };
-
-    const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+    // 주소 및 위치 관련 초기화
+    const [map, setMap] = useState(null);
+    const [geocoder, setGeocoder] = useState(null);
+    const [marker, setMarker] = useState(null);
+    const mapContainerRef = useRef(null);
 
     useEffect(() => {
-        const script = document.createElement('script');
-        script.src = '//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js';
-        script.async = true;
-        document.body.appendChild(script);
-        return () => {
-            document.body.removeChild(script);
+        const loadKakaoMapScript = () => {
+            const script = document.createElement('script');
+            script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=5710742f5106c685169dafe50a3751d5&libraries=services&autoload=false`;
+            script.async = true;
+
+            script.onload = () => {
+                window.kakao.maps.load(() => {
+                    let mapOption = '';
+                    // 지도
+                    if (userData.latitude && userData.longitude) {
+                        mapOption = {
+                            center: new window.kakao.maps.LatLng(userData.latitude, userData.longitude),
+                            level: 5,
+                        };
+                    } else {
+                        mapOption = {
+                            center: new window.kakao.maps.LatLng(37.4503144, 126.7029167),
+                            level: 5,
+                        };
+                    }
+
+                    const newMap = new window.kakao.maps.Map(mapContainerRef.current, mapOption);
+                    setMap(newMap);
+
+                    const newGeocoder = new window.kakao.maps.services.Geocoder();
+                    setGeocoder(newGeocoder);
+
+                    // 마커
+                    let newMarker = '';
+                    if (userData.latitude && userData.longitude) {
+                        newMarker = new window.kakao.maps.Marker({
+                            position: new window.kakao.maps.LatLng(userData.latitude, userData.longitude),
+                            map: newMap,
+                        });
+                    } else {
+                        newMarker = new window.kakao.maps.Marker({
+                            position: new window.kakao.maps.LatLng(37.4503144, 126.7029167),
+                            map: newMap,
+                        });
+                    }
+                    setMarker(newMarker);
+                });
+            };
+
+            document.head.appendChild(script);
+
+            return () => {
+                document.head.removeChild(script);
+            };
         };
+
+        loadKakaoMapScript();
     }, []);
 
-    // API 연동
     const searchLocation = (e) => {
         e.preventDefault();
-        new window.daum.Postcode({
-            oncomplete: function (data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
-                setUserData((prevData) => ({
-                    ...prevData,
-                    addr1: data.address,
-                    addr2: '',
-                }));
-            },
-        }).open();
+        if (window.daum && geocoder) {
+            new window.daum.Postcode({
+                oncomplete: function (data) {
+                    const addr = data.address;
+                    setUserData((prev) => ({ ...prev, addr1: addr }));
+
+                    geocoder.addressSearch(addr, function (results, status) {
+                        if (status === window.kakao.maps.services.Status.OK) {
+                            const result = results[0];
+                            const coords = new window.kakao.maps.LatLng(result.y, result.x);
+
+                            setUserData((prev) => ({
+                                ...prev,
+                                addr1: addr,
+                                addr2: '',
+                                latitude: coords.getLat(),
+                                longitude: coords.getLng(),
+                            }));
+
+                            mapContainerRef.current.style.display = 'block';
+                            map.relayout();
+                            map.setCenter(coords);
+                            marker.setPosition(coords);
+                        }
+                    });
+                },
+            }).open();
+        }
     };
 
     const onChg = (e) => {
@@ -53,7 +109,6 @@ const Address = () => {
         setUserData({ ...userData, [name]: value });
     };
 
-    // 유효성검사
     const validateForm = () => {
         if (!userData.addr1) {
             alert('주소를 검색해주세요.');
@@ -74,6 +129,7 @@ const Address = () => {
             navigate('/mypage');
         }
     };
+
     return (
         <Addressmenu>
             <div className="inner">
@@ -103,7 +159,7 @@ const Address = () => {
                             <button onClick={() => navigate('/mypage')}>취소</button>
                         </div>
                     </div>
-                    <div className="right" id="map"></div>
+                    <div className="right" ref={mapContainerRef} id="map"></div>
                 </form>
             </div>
             <Menu />
