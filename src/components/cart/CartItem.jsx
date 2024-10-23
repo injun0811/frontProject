@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { cartCount, cartTotalPrice, choiceCart, deleteCart } from '../../store/modules/cartSlice';
+import { cartCount, cartItemsTotalPrice, cartSelect, cartDelete } from '../../store/modules/cartSlice';
 import { useEffect, useState } from 'react';
 
 const CartItem = ({ item }) => {
@@ -11,7 +11,7 @@ const CartItem = ({ item }) => {
             return;
         } else {
             e.target.parentNode.classList.toggle('on');
-            dispatch(choiceCart(item));
+            dispatch(cartSelect(item));
         }
     };
     const chgCount = (id, calcul) => {
@@ -22,7 +22,7 @@ const CartItem = ({ item }) => {
         const totalPrice = price * count;
         setCalculPrice(totalPrice);
         const objTotalPrice = { id, totalPrice };
-        dispatch(cartTotalPrice(objTotalPrice));
+        dispatch(cartItemsTotalPrice(objTotalPrice));
     }, [count]);
     return (
         <article>
@@ -46,7 +46,7 @@ const CartItem = ({ item }) => {
                 <h3>총 금액</h3>
                 <span> $ {calculPrice}</span>
             </div>
-            <button onClick={() => dispatch(deleteCart(id))}> 삭제 </button>
+            <button onClick={() => dispatch(cartDelete(id))}> 삭제 </button>
         </article>
     );
 };

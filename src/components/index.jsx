@@ -9,3 +9,7 @@ export { default as Edit } from './mypage/Edit';
 export { default as Card } from './mypage/Card';
 export { default as Address } from './mypage/Address';
 export { default as AccountDel } from './mypage/AccountDel';
+export { default as Temerario } from './model/Temerario';
+export { default as Revuelto } from './model/Revuelto';
+export { default as Urus } from './model/Urus';
+export { default as Huracan } from './model/Huracan';

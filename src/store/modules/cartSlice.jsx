@@ -18,7 +18,7 @@ export const cartSlice = createSlice({
         //--------------------------------------------------------------
         // 카트
         // 적재 (carts에 이미 상품 존재하면 count만 증가 / 없으면 추가)
-        addCart: (state, action) => {
+        cartAdd: (state, action) => {
             const findId = state.carts.find((item) => item.id === Number(action.payload.id));
             if (findId !== '' && findId !== undefined) {
                 state.carts = state.carts.map((item) =>
@@ -32,27 +32,30 @@ export const cartSlice = createSlice({
             state.cartTotalCnt = state.carts.length;
         },
         // 삭제
-        deleteCart: (state, action) => {
+        cartDelete: (state, action) => {
+            const deletePrice = state.carts.find((item) => item.id === action.payload);
+            state.cartsTotalPrice = state.cartsTotalPrice - deletePrice.totalPrice;
             state.carts = state.carts.filter((item) => item.id !== action.payload);
+            state.cartTotalCnt = state.carts.length;
         },
         // 전체 삭제
-        delAllCart: (state) => {
+        cartDeleteAll: (state) => {
             state.carts = [];
             state.cartsTotalPrice = 0;
             state.cartTotalCnt = 0;
         },
         // 총 가격
-        totalCartPrice: (state) => {
+        cartTotalPrice: (state) => {
             state.cartsTotalPrice = state.carts.reduce((sum, item) => sum + item.totalPrice, 0);
         },
         // 상품 선택 (카트 적재할 때 isChoice 추가, action : 토글 수정)
-        choiceCart: (state, action) => {
+        cartSelect: (state, action) => {
             state.carts = state.carts.map((item) =>
                 item.id === action.payload.id ? { ...item, isChoice: !action.payload.isChoice } : item
             );
         },
         // 체크박스 선택된 항목 삭제
-        choiceDelCart: (state) => {
+        cartSelectDelete: (state) => {
             state.carts = state.carts.filter((item) => item.isChoice !== true);
         },
         // 항목별 수량
@@ -66,14 +69,14 @@ export const cartSlice = createSlice({
             }
         },
         // 항목별 금액
-        cartTotalPrice: (state, action) => {
+        cartItemsTotalPrice: (state, action) => {
             const { id, totalPrice } = action.payload;
             state.carts = state.carts.map((item) => (item.id === id ? { ...item, totalPrice } : item));
         },
         //--------------------------------------------------------------
         // 위시리스트
-        // 적재
-        addWishList: (state, action) => {
+        // 적재 (wishList에 이미 상품 존재하면 count만 증가 / 없으면 추가)
+        wishListAdd: (state, action) => {
             const findId = state.wishLists.find((item) => item.id === Number(action.payload.id));
             if (findId !== '' && findId !== undefined) {
                 state.wishLists = state.wishLists.map((item) =>
@@ -87,41 +90,44 @@ export const cartSlice = createSlice({
             state.wishListTotalCnt = state.wishLists.length;
         },
         // 삭제
-        deleteWishList: (state, action) => {
+        wishListDelete: (state, action) => {
+            const deletePrice = state.wishLists.find((item) => item.id === action.payload);
+            state.wishListTotalPrice = state.wishListTotalPrice - deletePrice.totalPrice;
             state.wishLists = state.wishLists.filter((item) => item.id !== action.payload);
+            state.wishListTotalCnt = state.wishLists.length;
         },
         // 전체 삭제
-        delAllWishList: (state) => {
+        wishListDeleteAll: (state) => {
             state.wishLists = [];
         },
         // 총 가격
-        totalWishListPrice: (state) => {
+        wishListTotalPrice: (state) => {
             state.wishListTotalPrice = state.wishLists.reduce((sum, item) => sum + item.totalPrice, 0);
         },
         // 상품 선택 (카트 적재할 때 isChoice 추가, action : 토글 수정)
-        choiceWishList: (state, action) => {
-            state.carts = state.carts.map((item) =>
+        wishListSelect: (state, action) => {
+            state.wishLists = state.wishLists.map((item) =>
                 item.id === action.payload.id ? { ...item, isChoice: !action.payload.isChoice } : item
             );
         },
         // 체크박스 선택된 항목 삭제
-        choiceDelWishList: (state) => {
-            state.carts = state.carts.filter((item) => item.isChoice !== true);
+        wishListSelectDelete: (state) => {
+            state.wishLists = state.wishLists.filter((item) => item.isChoice !== true);
         },
         // 항목별 수량
         wishListCount: (state, action) => {
             const { id, count } = action.payload;
             if (action.payload.calcul === '-') {
                 if (action.payload.count > 1)
-                    state.carts = state.carts.map((item) => (item.id === id ? { ...item, count: count - 1 } : item));
+                    state.wishLists = state.wishLists.map((item) => (item.id === id ? { ...item, count: count - 1 } : item));
             } else if (action.payload.calcul === '+') {
-                state.carts = state.carts.map((item) => (item.id === id ? { ...item, count: count + 1 } : item));
+                state.wishLists = state.wishLists.map((item) => (item.id === id ? { ...item, count: count + 1 } : item));
             }
         },
         // 항목별 금액
-        wishListTotalPrice: (state, action) => {
+        wishListItemsTotalPrice: (state, action) => {
             const { id, totalPrice } = action.payload;
-            state.carts = state.carts.map((item) => (item.id === id ? { ...item, totalPrice } : item));
+            state.wishLists = state.wishLists.map((item) => (item.id === id ? { ...item, totalPrice } : item));
         },
         //--------------------------------------------------------------
         // 상품
@@ -145,50 +151,26 @@ export const cartSlice = createSlice({
 });
 
 export const {
-    addCart,
-    deleteCart,
-    delAllCart,
-    totalCartPrice,
-    choiceCart,
-    choiceDelCart,
-    cartCount,
+    cartAdd,
+    cartDelete,
+    cartDeleteAll,
     cartTotalPrice,
+    cartSelect,
+    cartSelectDelete,
+    cartCount,
+    cartItemsTotalPrice,
 
-    addWishList,
-    deleteWishList, // 없음
-    delAllWishList, // 없음
-    totalWishListPrice,
-    choiceWishList, // 없음
-    choiceDelWishList, // 없음
+    wishListAdd,
+    wishListDelete, // 없음
+    wishListDeleteAll, // 없음
+    wishListTotalPrice,
+    wishListSelect, // 없음
+    wishListSelectDelete, // 없음
     wishListCount, // 없음
-    wishListTotalPrice, // 없음
+    wishListItemsTotalPrice, // 없음
 
     // resetCart,
     // sortCart,
     // searchCart,
 } = cartSlice.actions;
 export default cartSlice.reducer;
-
-/*
-함수 이름 수정
-addCart -> cartAdd
-deleteCart -> cartDelete
-delAllCart -> cartDeleteAll
-totalCartPrice -> cartTotalPrice
-choiceCart -> cartSelect
-choiceDelCart -> cartSelectDelete
-cartTotalPrice -> cartItemsTotalPrice
-
-addWishList -> wishListAdd
-deleteWishList -> wishListDelete
-delAllWishList -> wishListDeleteAll
-totalWishListPrice -> wishListTotalPrice
-choiceWishList -> wishListSelect
-choiceDelWishList -> wishListSelectDelete
-wishListTotalPrice -> wishListItemsTotalPrice
-
-
-삭제할 때 총 금액과 총 개수도 수정되도록 처리 (cart, wishList 둘다)
-
-장바구니 데이터 없을 때에도 빈 화면이 나옴
-*/

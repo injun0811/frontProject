@@ -6,21 +6,20 @@ export const FooterWrap = styled.footer`
         height: 150px;
     }
     .info {
-        display:flex;
+        display: flex;
 
         li {
             padding: 60px;
             font-size: 20px;
 
             a {
-                color: #FCC419;
+                color: #fcc419;
                 transition: 0.3s;
 
                 &:hover {
                     color: tomato;
                 }
             }
-            
         }
     }
 
@@ -28,14 +27,13 @@ export const FooterWrap = styled.footer`
         position: absolute;
         top: 35px;
         right: 0;
-        display:flex;
+        display: flex;
 
         li {
             padding: 20px;
             font-size: 20px;
 
             a {
-                
                 img {
                     width: 30px;
                     transition: 0.5s;
@@ -46,5 +44,4 @@ export const FooterWrap = styled.footer`
             }
         }
     }
-
 `;

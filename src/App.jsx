@@ -31,6 +31,10 @@ import {
     Address,
     Card,
     AccountDel,
+    Temerario,
+    Revuelto,
+    Urus,
+    Huracan,
 } from './components';
 
 const App = () => {
@@ -42,7 +46,14 @@ const App = () => {
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Main />} />
                         <Route path="/about" element={<About />} />
-                        <Route path="/models" element={<Models />} />
+
+                        <Route path="/models">
+                            <Route index element={<Models />} />
+                            <Route path="temerario" element={<Temerario />} />
+                            <Route path="revuelto" element={<Revuelto />} />
+                            <Route path="urus" element={<Urus />} />
+                            <Route path="huracan" element={<Huracan />} />
+                        </Route>
 
                         <Route path="/product">
                             <Route index element={<Product />} />

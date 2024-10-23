@@ -3,7 +3,7 @@ import ProductShowImg from './ProductShowImg';
 import { ProductDetailWrap } from './ProductStyle';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductCategory from './ProductCategory';
-import { addCart, addWishList, totalCartPrice, totalWishListPrice } from '../../store/modules/cartSlice';
+import { cartAdd, wishListAdd, cartTotalPrice, wishListTotalPrice } from '../../store/modules/cartSlice';
 import { useNavigate } from 'react-router-dom';
 
 const ProductDetail = () => {
@@ -40,8 +40,8 @@ const ProductDetail = () => {
 
     const goCart = () => {
         if (login) {
-            dispatch(addCart(detail));
-            dispatch(totalCartPrice());
+            dispatch(cartAdd(detail));
+            dispatch(cartTotalPrice());
         } else {
             if (confirm('로그인이 필요합니다, 로그인 페이지로 이동하시겠습니까?')) {
                 navigate('/login');
@@ -51,8 +51,8 @@ const ProductDetail = () => {
 
     const goWish = () => {
         if (login) {
-            dispatch(addWishList(detail));
-            dispatch(totalWishListPrice());
+            dispatch(wishListAdd(detail));
+            dispatch(wishListTotalPrice());
         } else {
             if (confirm('로그인이 필요합니다, 로그인 페이지로 이동하시겠습니까?')) {
                 navigate('/login');
