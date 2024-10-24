@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ModelCategory from './modelCategory';
-import { TemerarioWrap } from './ModelStyle';
+import { Content, StepLayout, TemerarioWrap, VideoBox } from './ModelStyle';
 
 const Temerario = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -15,17 +15,18 @@ const Temerario = () => {
         leftSide.addEventListener('mouseleave', function () {
             hexagonImage.src = '/images/hexagon_yellow.gif';
         });
+        console.log(console.log(leftSide));
     });
     return (
         <TemerarioWrap>
             <ModelCategory />
-            <div className="step01">
-                <video autoPlay muted loop className="backgroundVideo">
+            <StepLayout className="step01">
+                <VideoBox autoPlay muted loop>
                     <source src="./images/Temerario.mp4" type="video/mp4" />
-                </video>
-                <div className="content">
+                </VideoBox>
+                <Content className="content">
                     <h3 className="firstHeading">TEMERARIO</h3>
-                    <h3 className="secondHeading">YOU CAN'T HIDE WHO YOU ARE</h3>
+                    <h3 className="secondHeading">{"YOU CAN'T HIDE WHO YOU ARE"}</h3>
 
                     <div className="underInfo">
                         <div>
@@ -49,8 +50,8 @@ const Temerario = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </Content>
+            </StepLayout>
             <div className="step02">
                 <div className="left">
                     <img src="./images/models/temerario/temerario_01.jpg" alt="temerario_01" />

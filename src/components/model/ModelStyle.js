@@ -53,9 +53,37 @@ export const ModelCategoryWrap = styled.div`
     }
 `;
 
+export const StepLayout = styled.section`
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+`;
+
+export const VideoBox = styled.video`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+`;
+
+export const Content = styled.div`
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 30px;
+    color: #fcc419;
+`;
+
 export const TemerarioWrap = styled.div`
     .step01 {
-        position: relative;
+        /* position: relative;
         width: 100%;
         height: 100vh;
         overflow: hidden;
@@ -67,10 +95,10 @@ export const TemerarioWrap = styled.div`
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
+        } */
 
         .content {
-            position: relative;
+            /* position: relative;
             z-index: 1;
             height: 100%;
             display: flex;
@@ -78,7 +106,7 @@ export const TemerarioWrap = styled.div`
             justify-content: flex-start;
             align-items: flex-start;
             padding: 30px;
-            color: #fcc419;
+            color: #fcc419; */
 
             .firstHeading {
                 user-select: none;
@@ -150,7 +178,7 @@ export const TemerarioWrap = styled.div`
 
         .left {
             width: 100%;
-            
+
             img {
                 width: 100%;
                 height: 100%;
@@ -171,7 +199,7 @@ export const TemerarioWrap = styled.div`
                 font-size: 18px;
                 margin-bottom: 30px;
             }
-            
+
             img {
                 width: 20%;
             }
@@ -189,7 +217,7 @@ export const TemerarioWrap = styled.div`
             width: 30%;
             align-content: center;
             position: absolute;
-            color: #FCC419;
+            color: #fcc419;
 
             h3 {
                 font-size: 40px;
@@ -203,7 +231,7 @@ export const TemerarioWrap = styled.div`
 
         .right {
             width: 100%;
-            
+
             img {
                 width: 100%;
                 height: 100%;
@@ -221,11 +249,11 @@ export const TemerarioWrap = styled.div`
         .left {
             width: 30%;
             padding: 20px;
-            color: #FCC419;
+            color: #fcc419;
             position: relative; /* 절대 위치를 상대 위치로 변경 */
             align-content: center;
             z-index: 2;
-            border-top: 5px solid #FCC419;
+            border-top: 5px solid #fcc419;
             background-color: #212121;
 
             h3 {
@@ -263,7 +291,7 @@ export const TemerarioWrap = styled.div`
             background-color: #212121;
             z-index: 1;
             clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 100%);
-            border-top: 5px solid #FCC419;
+            border-top: 5px solid #fcc419;
         }
     }
 
@@ -290,7 +318,7 @@ export const TemerarioWrap = styled.div`
             background-color: #212121;
             z-index: 1;
             clip-path: polygon(0% 0%, 100% 0%, 97% 100%, 0% 100%);
-            border-bottom: 5px solid #FCC419;
+            border-bottom: 5px solid #fcc419;
         }
 
         .left::after {
@@ -303,7 +331,7 @@ export const TemerarioWrap = styled.div`
             height: 50px;
             background-color: #212121;
             z-index: 1;
-            border-top: 5px solid #FCC419;
+            border-top: 5px solid #fcc419;
             clip-path: polygon(0% 0%, 97% 0%, 100% 100%, 0% 100%);
         }
 
@@ -325,7 +353,7 @@ export const TemerarioWrap = styled.div`
             background-color: #212121;
             z-index: 1;
             clip-path: polygon(3% 0%, 100% 0%, 100% 100%, 0% 100%);
-            border-bottom: 5px solid #FCC419;
+            border-bottom: 5px solid #fcc419;
         }
 
         .right::after {
@@ -338,11 +366,10 @@ export const TemerarioWrap = styled.div`
             height: 50px;
             background-color: #212121;
             z-index: 1;
-            border-top: 5px solid #FCC419;
+            border-top: 5px solid #fcc419;
             clip-path: polygon(3% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
-    
-}  
+    }
 `;
 
 export const RevueltoWrap = styled.div`
