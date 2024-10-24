@@ -54,7 +54,7 @@ export const ModelCategoryWrap = styled.div`
 `;
 
 export const TemerarioWrap = styled.div`
-    .videoDiv {
+    .step01 {
         position: relative;
         width: 100%;
         height: 100vh;
@@ -68,79 +68,281 @@ export const TemerarioWrap = styled.div`
             height: 100%;
             object-fit: cover;
         }
-    }
 
-    .inner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding: 30px;
-        color: #fcc419;
-
-        .firstHeading {
-            user-select: none;
-            font-size: 30px;
-            margin: 300px 0 0 150px;
-        }
-
-        .secondHeading {
-            user-select: none;
-            font-size: 70px;
-            margin: 0 0 0 150px;
-        }
-
-        .underInfo {
-            margin: 500px 0 0 150px;
-            user-select: none;
-            display: flex;
-            align-items: center;
-            div {
-                padding: 0 40px 0 0;
-            }
-        }
-
-        .leftSide {
+        .content {
             position: relative;
+            z-index: 1;
+            height: 100%;
             display: flex;
-            align-items: center;
-            margin: 0 0 0 1000px;
-            cursor: pointer;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 30px;
+            color: #fcc419;
 
-            img {
-                width: 70px;
-                height: 70px;
-                padding: 0 20px 0 20px;
+            .firstHeading {
+                user-select: none;
+                font-size: 30px;
+                margin: 300px 0 0 150px;
             }
 
-            div {
-                p {
-                    font-size: 30px;
+            .secondHeading {
+                user-select: none;
+                font-size: 70px;
+                margin: 0 0 0 150px;
+            }
+
+            .underInfo {
+                margin: 300px 0 0 150px;
+                user-select: none;
+                display: flex;
+                align-items: center;
+
+                div {
+                    margin: auto;
+                    padding: 0 40px 0 0;
+                }
+
+                .leftSide {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    left: 50%;
+                    cursor: pointer;
+
+                    img {
+                        width: 70px;
+                        height: 70px;
+                        padding: 0 20px;
+                    }
+
+                    div {
+                        p {
+                            font-size: 30px;
+                        }
+                    }
                 }
             }
-        }
 
-        .leftSide::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            right: 85.7%;
-            width: 30px;
-            height: 30px;
-            background-image: url(/images/arrow_black.png);
-            background-size: cover;
-            z-index: 1;
-        }
-        .leftSide:hover::before {
-            background-image: url(/images/arrow_yellow.png);
-            color: #212121;
+            .leftSide::before {
+                content: '';
+                position: absolute;
+                top: 20px;
+                right: 86%;
+                width: 30px;
+                height: 30px;
+                background-image: url(/images/arrow_black.png);
+                background-size: cover;
+                z-index: 1;
+            }
+
+            .leftSide:hover::before {
+                background-image: url(/images/arrow_yellow.png);
+                color: #212121;
+            }
         }
     }
+
+    .step02 {
+        width: 190vh;
+        height: 60vh;
+        display: flex;
+
+        .left {
+            width: 100%;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .right {
+            align-content: center;
+            position: relative;
+            margin: 50px;
+
+            h3 {
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+            
+            img {
+                width: 20%;
+            }
+        }
+    }
+
+    .step03 {
+        width: 100%;
+        height: 60vh;
+        display: flex;
+
+        .left {
+            height: 56%;
+            padding: 20px;
+            width: 30%;
+            align-content: center;
+            position: absolute;
+            color: #FCC419;
+
+            h3 {
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .right {
+            width: 100%;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .step04 {
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        overflow: hidden; /* 부모 컨테이너에 스크롤 숨기기 */
+
+        .left {
+            width: 30%;
+            padding: 20px;
+            color: #FCC419;
+            position: relative; /* 절대 위치를 상대 위치로 변경 */
+            align-content: center;
+            z-index: 2;
+            border-top: 5px solid #FCC419;
+            background-color: #212121;
+
+            h3 {
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .right {
+            width: 70%; /* 이미지가 차지할 공간 설정 */
+            position: relative; /* 이미지의 절대 위치를 위한 설정 */
+
+            img {
+                position: absolute;
+                top: 0;
+                right: -90%;
+                width: 200%; /* 이미지의 크기를 두 배로 설정하여 절반만 보임 */
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .right::before {
+            box-sizing: border-box;
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 500px;
+            height: 572px;
+            background-color: #212121;
+            z-index: 1;
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 100%);
+            border-top: 5px solid #FCC419;
+        }
+    }
+
+    .step05 {
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        overflow: hidden; /* 부모 컨테이너에 스크롤 숨기기 */
+
+        .left {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .left::before {
+            box-sizing: border-box;
+            content: '';
+            position: absolute;
+            left: 0%;
+            width: 850px;
+            height: 50px;
+            background-color: #212121;
+            z-index: 1;
+            clip-path: polygon(0% 0%, 100% 0%, 97% 100%, 0% 100%);
+            border-bottom: 5px solid #FCC419;
+        }
+
+        .left::after {
+            box-sizing: border-box;
+            content: '';
+            position: absolute;
+            top: 356.5%;
+            left: 0%;
+            width: 900px;
+            height: 50px;
+            background-color: #212121;
+            z-index: 1;
+            border-top: 5px solid #FCC419;
+            clip-path: polygon(0% 0%, 97% 0%, 100% 100%, 0% 100%);
+        }
+
+        .right {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .right::before {
+            box-sizing: border-box;
+            content: '';
+            position: absolute;
+            left: 55.3%;
+            width: 850px;
+            height: 50px;
+            background-color: #212121;
+            z-index: 1;
+            clip-path: polygon(3% 0%, 100% 0%, 100% 100%, 0% 100%);
+            border-bottom: 5px solid #FCC419;
+        }
+
+        .right::after {
+            box-sizing: border-box;
+            content: '';
+            position: absolute;
+            top: 356.5%;
+            left: 52.7%;
+            width: 900px;
+            height: 50px;
+            background-color: #212121;
+            z-index: 1;
+            border-top: 5px solid #FCC419;
+            clip-path: polygon(3% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+    
+}  
 `;
 
 export const RevueltoWrap = styled.div`
