@@ -56,10 +56,6 @@ const App = () => {
 
                         <Route path="/product">
                             <Route index element={<Product />} />
-                            <Route path="/dynamic" element={<ProductPage />} />
-                            <Route path="/caps" element={<ProductPage />} />
-                            <Route path="/caps/:productdetail" element={<ProductPage />} />
-
                             <Route path=":category" element={<ProductPage />} />
                             <Route path=":category/productdetail" element={<ProductDetail />} />
                         </Route>

@@ -317,7 +317,7 @@ export const TemerarioWrap = styled.div`
             height: 50px;
             background-color: #212121;
             z-index: 1;
-            clip-path: polygon(0% 0%, 100% 0%, 97% 100%, 0% 100%);
+            clip-path: polygon(0% 100%, 97% 100%, 100% 0%, 0% 0%);
             border-bottom: 5px solid #fcc419;
         }
 
@@ -327,7 +327,7 @@ export const TemerarioWrap = styled.div`
             position: absolute;
             top: 356.5%;
             left: 0%;
-            width: 900px;
+            width: 850px;
             height: 50px;
             background-color: #212121;
             z-index: 1;
@@ -352,7 +352,7 @@ export const TemerarioWrap = styled.div`
             height: 50px;
             background-color: #212121;
             z-index: 1;
-            clip-path: polygon(3% 0%, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(3% 100%, 100% 100%, 100% 0%, 0% 0%);
             border-bottom: 5px solid #fcc419;
         }
 
@@ -361,8 +361,8 @@ export const TemerarioWrap = styled.div`
             content: '';
             position: absolute;
             top: 356.5%;
-            left: 52.7%;
-            width: 900px;
+            left: 55.3%;
+            width: 850px;
             height: 50px;
             background-color: #212121;
             z-index: 1;

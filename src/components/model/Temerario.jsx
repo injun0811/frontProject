@@ -100,6 +100,15 @@ const Temerario = () => {
                     <img src="./images/models/temerario/temerario_05.jpg" alt="temerario_05" />
                 </div>
             </div>
+            <div className="step06">
+                <div className="left">
+                    <img src="./images/models/temerario/temerario_06.jpg" alt="temerario_06" />
+                </div>
+                <div className="right">
+                    <h3>AUGMENTED REALITY</h3>
+                    <p>Frame the QR code with your smartphone and turn on the Lamborghini Augmented Reality experience.</p>
+                </div>
+            </div>
         </TemerarioWrap>
     );
 };
