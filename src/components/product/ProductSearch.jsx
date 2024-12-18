@@ -39,10 +39,10 @@ const ProductSearch = () => {
                 </p>
 
                 <p>
-                    <input type="text" name="searchTxt" value={searchTxt} onChange={onChg} />
-                    <button type="submit" className="mainBtn">
+                    <button type="submit" className="mainBtn" disabled>
                         검색
                     </button>
+                    <input type="text" name="searchTxt" value={searchTxt} onChange={onChg} />
                 </p>
             </form>
         </ProductSearchWrap>
